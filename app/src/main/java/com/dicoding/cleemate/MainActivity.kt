@@ -1,5 +1,6 @@
 package com.dicoding.cleemate
 
+import android.graphics.Color
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +16,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Buat status bar transparan
+        window.statusBarColor = Color.TRANSPARENT
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)

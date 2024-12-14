@@ -1,4 +1,4 @@
-package com.dicoding.storyapp.data.pref
+package com.dicoding.cleemate.pref
 
 import android.content.Context
 import androidx.datastore.core.DataStore

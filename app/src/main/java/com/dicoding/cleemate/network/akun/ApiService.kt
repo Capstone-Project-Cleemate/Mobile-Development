@@ -4,14 +4,17 @@ import com.dicoding.cleemate.model.HealthRequest
 import com.dicoding.cleemate.model.KesehatanResponse
 import com.dicoding.cleemate.model.LoginResponse
 import com.dicoding.cleemate.model.RegisterResponse
+import com.dicoding.cleemate.model.WeatherResponse
 import retrofit2.http.Body
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
+import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Path
 
-interface AApiService {
+interface ApiService {
     @FormUrlEncoded
-    @POST("register")
+    @POST("api/register")
     suspend fun register(
         @Field("name") name: String,
         @Field("email") email: String,
@@ -19,14 +22,20 @@ interface AApiService {
     ): RegisterResponse
 
     @FormUrlEncoded
-    @POST("login")
+    @POST("api/login")
     suspend fun login(
         @Field("email") email: String,
         @Field("password") password: String
     ): LoginResponse
 
-    @POST("api/health")
+    @GET("weather/{latitude}/{longitude}")
+    suspend fun getWeatherData(
+        @Path("latitude") latitude: Double,
+        @Path("longitude") longitude: Double
+    ): WeatherResponse
+
+    @POST("health")
     suspend fun sendHealthConditions(
-        @Body conditions: HealthRequest
+        @Body healthRequest: HealthRequest
     ): KesehatanResponse
 }

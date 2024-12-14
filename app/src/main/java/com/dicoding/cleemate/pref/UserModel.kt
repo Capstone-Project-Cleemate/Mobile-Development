@@ -1,4 +1,4 @@
-package com.dicoding.storyapp.data.pref
+package com.dicoding.cleemate.pref
 
 data class UserModel(
     val email: String,

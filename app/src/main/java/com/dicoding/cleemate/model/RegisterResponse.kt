@@ -1,7 +1,6 @@
-package com.dicoding.cleemate.network.akun
+package com.dicoding.cleemate.model
 
-data class RegistResponse(
-    val message: String,
-    val userId: String? = null,
-    val success: Boolean
+data class RegisterResponse(
+    val error: Boolean? = null,
+    val message: String? = null
 )

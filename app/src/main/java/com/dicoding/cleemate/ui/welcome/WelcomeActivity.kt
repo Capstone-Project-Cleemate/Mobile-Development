@@ -5,15 +5,10 @@ import android.os.Build
 import android.os.Bundle
 import android.view.WindowInsets
 import android.view.WindowManager
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.WindowInsetsControllerCompat
-import com.dicoding.cleemate.R
 import com.dicoding.cleemate.databinding.ActivityWelcomeBinding
 import com.dicoding.cleemate.ui.login.LoginActivity
-import com.dicoding.cleemate.ui.regist.RegistActivity
+import com.dicoding.cleemate.ui.regist.RegisterActivity
 
 class WelcomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityWelcomeBinding
@@ -46,7 +41,8 @@ class WelcomeActivity : AppCompatActivity() {
         }
 
         binding.registButton.setOnClickListener {
-            startActivity(Intent(this, RegistActivity::class.java))
+            startActivity(Intent(this, RegisterActivity::class.java))
         }
+
     }
 }
